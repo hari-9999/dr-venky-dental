@@ -1,0 +1,237 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.top-bar {
+  background-color: var(--bg-surface);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 8px 0;
+  font-weight: 500;
+  height: auto;
+  transition: max-height 0.4s ease, padding 0.4s, opacity 0.4s;
+  overflow: hidden;
+  max-height: 50px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-contacts, .top-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0.9;
+}
+
+.contact-link:hover {
+  opacity: 1;
+}
+
+.divider {
+  width: 1px;
+  height: 14px;
+  background-color: var(--border-color);
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Glass panel wrappers */
+.main-nav-wrapper {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 12px 0;
+}
+
+.header-scrolled .top-bar {
+  max-height: 0;
+  padding: 0;
+  opacity: 0;
+  border-bottom: none;
+}
+
+.header-scrolled .main-nav-wrapper {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--shadow-md);
+  padding: 8px 0;
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-image-box {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* PERFECT RATIO UNCLIPPED */
+}
+
+/* Fallback box if logo not found */
+.fallback-text-logo {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(15, 76, 129, 0.25);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.fallback-text-logo::after {
+  content: 'V';
+}
+
+.logo-brand:hover .logo-image-box {
+  transform: scale(1.05);
+}
+
+.logo-text h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.logo-text span {
+  font-size: 0.8rem;
+  color: var(--secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.desktop-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+}
+
+.desktop-nav a {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.desktop-nav a:not(.btn):hover {
+  color: var(--primary);
+}
+
+.desktop-nav a:not(.btn)::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background-color: var(--secondary);
+  transition: width 0.3s ease;
+}
+
+.desktop-nav a:not(.btn):hover::after {
+  width: 100%;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary);
+  padding: 4px;
+}
+
+/* Responsive Clean Mobile */
+@media (max-width: 1024px) {
+  .top-bar { display: none; }
+  .mobile-toggle { display: block; }
+  .desktop-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    align-items: flex-start;
+  }
+  .desktop-nav.open {
+    max-height: 400px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-color);
+  }
+  .desktop-nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+  .desktop-nav ul li {
+    width: 100%;
+  }
+  .desktop-nav a:not(.btn) {
+    display: block;
+    padding: 16px 24px;
+    width: 100%;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 1.1rem;
+  }
+  .nav-cta {
+    margin: 20px 24px;
+    width: calc(100% - 48px);
+  }
+}

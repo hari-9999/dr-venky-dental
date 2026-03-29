@@ -1,0 +1,13 @@
+
+> temp-app@0.0.0 build
+> vite build
+
+[36mvite v8.0.3 [32mbuilding client environment for production...[36m[39m
+[2Ktransforming...✓ 1735 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.45 kB │ gzip:  0.29 kB
+dist/assets/index-DTKgKeCI.css   18.85 kB │ gzip:  4.47 kB
+dist/assets/index-BkMSiO3J.js   213.84 kB │ gzip: 67.05 kB
+
+[32m✓ built in 1.66s[39m

@@ -1,0 +1,247 @@
+.booking-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: calc(var(--header-height) + 40px);
+  padding-bottom: 80px;
+  background: var(--bg-alt);
+}
+
+.booking-container {
+  max-width: 600px;
+  width: 100%;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.btn-back:hover {
+  color: var(--primary);
+}
+
+.booking-form-wrapper {
+  background: var(--bg-surface);
+  border-radius: 24px;
+  padding: 40px;
+}
+
+.booking-form-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.booking-form-header h2 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.booking-form-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.form-section {
+  margin-bottom: 32px;
+}
+
+.form-section h3 {
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.input-group input, 
+.input-group select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-alt);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-dark);
+  transition: outline 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: 2px solid var(--primary);
+  box-shadow: 0 0 0 4px rgba(15, 76, 129, 0.1);
+}
+
+.slot-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.time-slot {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+}
+
+.time-slot:hover {
+  background: var(--primary-light);
+  color: white;
+  border-color: var(--primary);
+}
+
+.time-slot.selected {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 25, 47, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: var(--bg-surface);
+  border-radius: 24px;
+  padding: 48px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.success-icon {
+  color: var(--secondary);
+  margin-bottom: 24px;
+}
+
+.modal-content h2 {
+  font-size: 2.25rem;
+  color: var(--text-dark);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.modal-details {
+  background: var(--bg-alt);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.modal-details p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.modal-details strong {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.modal-date-card {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 16px 0;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.modal-date, .modal-time {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0 !important;
+}
+
+.modal-note {
+  font-size: 0.85rem !important;
+  color: var(--text-muted);
+  margin-top: 16px !important;
+  font-style: italic;
+}
+
+.scale-up {
+  animation: scaleUp 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes scaleUp {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .booking-form-wrapper { padding: 24px; }
+  .modal-content { padding: 32px 24px; }
+  .modal-date-card { flex-direction: column; gap: 12px; align-items: center; }
+}
