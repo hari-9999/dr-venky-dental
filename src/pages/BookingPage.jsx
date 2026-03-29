@@ -15,8 +15,8 @@ const BookingPage = () => {
   
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const morningSlots = ["09:00 AM", "10:00 AM", "11:30 AM"];
-  const eveningSlots = ["04:00 PM", "05:30 PM", "07:00 PM"];
+  const morningSlots = ["10:30 AM", "11:30 AM", "01:00 PM"];
+  const eveningSlots = ["04:00 PM", "06:00 PM", "08:00 PM", "09:00 PM"];
 
   const reasons = [
     "General Consultation",

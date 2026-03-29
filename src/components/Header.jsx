@@ -26,7 +26,7 @@ const Header = () => {
             </span>
             <span className="divider"></span>
             <span className="contact-item">
-              <Calendar size={14} className="text-primary" /> Mon-Sat: 9AM - 8PM
+              <Calendar size={14} className="text-primary" /> Daily: 10AM - 10PM
             </span>
           </div>
           <div className="top-actions">

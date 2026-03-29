@@ -62,17 +62,14 @@ const Footer = () => {
            <div className="footer-hours">
              <h4 className="footer-title">Working Hours</h4>
              <ul className="contact-info">
-               <li>
-                 <Clock className="contact-icon text-secondary" size={20} />
-                 <span>
-                   Mon - Sat:<br />9:00 AM - 8:00 PM
-                 </span>
-               </li>
-               <li>
-                 <Clock className="contact-icon text-muted" size={20} />
-                 <span className="text-muted">Sunday: By Appointment</span>
-               </li>
-             </ul>
+              <li>
+                <Clock className="contact-icon text-secondary" size={20} />
+                <span>
+                  <strong>Daily (Mon - Sun)</strong><br />
+                  10:00 AM - 10:00 PM
+                </span>
+              </li>
+            </ul>
              <Link to="/book" className="btn btn-secondary mt-20" style={{ width: '100%', marginTop: '20px' }}>
                Book Appointment <ArrowRight size={18} />
              </Link>
