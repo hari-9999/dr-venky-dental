@@ -6,19 +6,34 @@ import Home from './pages/Home';
 import BookingPage from './pages/BookingPage';
 import './index.css';
 
-// Scroll to top on route change
-const ScrollToTop = () => {
-  const { pathname } = useLocation();
+// Intelligent Scroll Handler
+const ScrollHandler = () => {
+  const { pathname, hash } = useLocation();
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // If there's no hash (like e.g. /book or /), scroll to top
+    if (!hash) {
+      window.scrollTo(0, 0);
+    } else {
+      // If there's a hash, find the element and scroll smoothly to it
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        // Slight delay to ensure home page content is rendered before scrolling
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [pathname, hash]);
+
   return null;
 };
 
 function App() {
   return (
     <>
-      <ScrollToTop />
+      <ScrollHandler />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
